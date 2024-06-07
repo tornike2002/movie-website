@@ -2,24 +2,44 @@
 import Image from "next/image";
 import styled from "styled-components";
 import LoginIcon from "/public/loginAssets/MovieIcon.png";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+type LoginFormField = {
+  email: string;
+  password: string;
+};
+
 export default function LoginPage() {
+  const { register, handleSubmit } = useForm<LoginFormField>();
+
+  const onSubmit: SubmitHandler<LoginFormField> = (data) => {
+    console.log(data);
+  };
   return (
     <LoginContainer>
       <Image src={LoginIcon} alt="hello" />
-      <div>
-        <h1></h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h1>Login</h1>
         <div>
-          <input type="text" placeholder="Email Address" />
-          <input type="password" placeholder="Password" />
+          <input
+            {...register("email")}
+            type="text"
+            placeholder="Email Address"
+          />
+          <input
+            {...register("password")}
+            type="password"
+            placeholder="Password"
+          />
         </div>
         <div>
-          <button>Login to your account</button>
+          <button type="submit">Login to your account</button>
           <div>
             <button>Do not have account?</button>
             <button>Sign up</button>
           </div>
         </div>
-      </div>
+      </form>
     </LoginContainer>
   );
 }
