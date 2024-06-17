@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 type SignFormField = {
   email: string;
   password: string;
+  repeat: string;
 };
 
 export default function RegisterPage() {
@@ -24,13 +25,19 @@ export default function RegisterPage() {
           <input
             {...register("email")}
             type="text"
-            placeholder="Email Address"
+            placeholder="Email address"
             className="sign-inputs-style"
           />
           <input
             {...register("password")}
             type="password"
             placeholder="Password"
+            className="sign-inputs-style"
+          />
+          <input
+            {...register("repeat")}
+            type="password"
+            placeholder="Repeat password"
             className="sign-inputs-style"
           />
         </div>
@@ -40,7 +47,7 @@ export default function RegisterPage() {
           </button>
           <div className="sign-end-buttons">
             <button type="button" className="end-buttons-question">
-             Already have an account?
+              Already have an account?
             </button>
             <button type="button" className="end-buttons-sign">
               Login
