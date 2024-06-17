@@ -56,6 +56,11 @@ const LoginForm = styled.form`
   background-color: #161d2f;
   h1 {
     color: #ffff;
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40.32px;
+    margin-bottom: 40px;
   }
   .login-inputs {
     display: flex;
@@ -64,12 +69,10 @@ const LoginForm = styled.form`
     .login-inputs-style {
       background-color: #161d2f;
       outline: none;
-      border-bottom: 1px solid #5A698F;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      padding-bottom: 10px;
+      border: none;
+      border-bottom: 1px solid #5a698f;
       color: #ffffff;
+      min-height: 37px;
     }
   }
 `;
