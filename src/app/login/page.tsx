@@ -24,7 +24,7 @@ export default function LoginPage() {
           <input
             {...register("email")}
             type="text"
-            placeholder="Email Address"
+            placeholder="Email address"
             className="login-inputs-style"
           />
           <input
