@@ -18,18 +18,20 @@ export default function LoginPage() {
   return (
     <LoginContainer>
       <Image src={LoginIcon} alt="hello" />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <LoginForm onSubmit={handleSubmit(onSubmit)}>
         <h1>Login</h1>
-        <div>
+        <div className="login-inputs">
           <input
             {...register("email")}
             type="text"
             placeholder="Email Address"
+            className="login-inputs-style"
           />
           <input
             {...register("password")}
             type="password"
             placeholder="Password"
+            className="login-inputs-style"
           />
         </div>
         <div>
@@ -39,11 +41,35 @@ export default function LoginPage() {
             <button>Sign up</button>
           </div>
         </div>
-      </form>
+      </LoginForm>
     </LoginContainer>
   );
 }
 
 const LoginContainer = styled.section`
   min-height: 100vh;
+`;
+
+const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  background-color: #161d2f;
+  h1 {
+    color: #ffff;
+  }
+  .login-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .login-inputs-style {
+      background-color: #161d2f;
+      outline: none;
+      border-bottom: 1px solid #5A698F;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      padding-bottom: 10px;
+      color: #ffffff;
+    }
+  }
 `;
