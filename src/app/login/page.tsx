@@ -88,6 +88,7 @@ const LoginForm = styled.form`
       border: none;
       border-radius: 8px;
       margin-top: 40px;
+      cursor: pointer;
     }
   }
   .login-inputs {
