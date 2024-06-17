@@ -4,55 +4,62 @@ import styled from "styled-components";
 import LoginIcon from "/public/loginAssets/MovieIcon.png";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-type LoginFormField = {
+type SignFormField = {
   email: string;
   password: string;
+  repeat: string;
 };
 
-export default function LoginPage() {
-  const { register, handleSubmit } = useForm<LoginFormField>();
+export default function RegisterPage() {
+  const { register, handleSubmit } = useForm<SignFormField>();
 
-  const onSubmit: SubmitHandler<LoginFormField> = (data) => {
+  const onSubmit: SubmitHandler<SignFormField> = (data) => {
     console.log(data);
   };
   return (
-    <LoginContainer>
+    <SignContainer>
       <Image src={LoginIcon} alt="hello" />
-      <LoginForm onSubmit={handleSubmit(onSubmit)}>
-        <h1>Login</h1>
-        <div className="login-inputs">
+      <SignForm onSubmit={handleSubmit(onSubmit)}>
+        <h1>Sign Up</h1>
+        <div className="sign-inputs">
           <input
             {...register("email")}
             type="text"
             placeholder="Email address"
-            className="login-inputs-style"
+            className="sign-inputs-style"
           />
           <input
             {...register("password")}
             type="password"
             placeholder="Password"
-            className="login-inputs-style"
+            className="sign-inputs-style"
+          />
+          <input
+            {...register("repeat")}
+            type="password"
+            placeholder="Repeat password"
+            className="sign-inputs-style"
           />
         </div>
-        <div className="login-buttons">
-          <button type="submit" className="login-account">
-            Login to your account
+        <div className="sign-buttons">
+          <button type="submit" className="sign-account">
+            Create an account
           </button>
-          <div className="login-end-buttons">
+          <div className="sign-end-buttons">
             <button type="button" className="end-buttons-question">
-              Do not have account?
+              Already have an account?
             </button>
             <button type="button" className="end-buttons-sign">
-              Sign up
+              Login
             </button>
           </div>
         </div>
-      </LoginForm>
-    </LoginContainer>
+      </SignForm>
+    </SignContainer>
   );
 }
 
-const LoginContainer = styled.section`
+const SignContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +68,7 @@ const LoginContainer = styled.section`
   gap: 82.99px;
 `;
 
-const LoginForm = styled.form`
+const SignForm = styled.form`
   display: flex;
   flex-direction: column;
   background-color: #161d2f;
@@ -75,8 +82,8 @@ const LoginForm = styled.form`
     line-height: 40.32px;
     margin-bottom: 40px;
   }
-  .login-buttons {
-    .login-account {
+  .sign-buttons {
+    .sign-account {
       background-color: rgba(252, 71, 71, 1);
       font-size: 15px;
       font-weight: 400;
@@ -91,11 +98,11 @@ const LoginForm = styled.form`
       cursor: pointer;
     }
   }
-  .login-inputs {
+  .sign-inputs {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    .login-inputs-style {
+    .sign-inputs-style {
       background-color: #161d2f;
       outline: none;
       border: none;
@@ -104,7 +111,7 @@ const LoginForm = styled.form`
       min-height: 37px;
     }
   }
-  .login-end-buttons {
+  .sign-end-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
