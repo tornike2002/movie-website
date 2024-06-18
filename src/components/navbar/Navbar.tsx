@@ -18,7 +18,7 @@ export default function Navbar() {
         <PiTelevisionDuotone className="nav-icons" />
         <FaBookmark className="nav-icons" />
       </div>
-      <Image src={profileIcon} alt="profile" />
+      <Image src={profileIcon} alt="profile" style={{cursor: "pointer"}} />
     </NavbarContainer>
   );
 }
