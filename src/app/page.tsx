@@ -1,6 +1,5 @@
+import Navbar from "@/components/navbar/Navbar";
 
 export default function Home() {
-  return (
-    <h1>Hello Tornike!</h1>
-  );
+  return <Navbar />;
 }
