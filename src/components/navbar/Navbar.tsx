@@ -1,6 +1,9 @@
-
+import Image from "next/image";
+import NavLogo from "/public/loginAssets/MovieIcon.png";
 export default function Navbar() {
   return (
-    <div>Navbar</div>
-  )
+    <div>
+      <Image src={NavLogo} alt="icon" />
+    </div>
+  );
 }
