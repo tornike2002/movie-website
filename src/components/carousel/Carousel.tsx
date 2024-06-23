@@ -1,3 +1,5 @@
+"use client"
+
 import styled from "styled-components";
 import Image from "next/image";
 import slider1 from "/public/carouselAssets/carousel1.png";
@@ -45,7 +47,7 @@ const Slider = styled.div`
   }
   .slide {
     height: 200px;
-    width: 250px;
+    width: 476px;
     display: flex;
     align-items: center;
     padding: 15px;
@@ -55,7 +57,7 @@ const Slider = styled.div`
       transition: transform 1s;
     }
     img:hover {
-      transform: translateZ(20px);
+      transform: translateZ(5px);
     }
   }
   @keyframes scroll {
